@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/MineInAbyss.io',
-  assetPrefix: '/MineInAbyss.io/',
+  basePath: isProduction ? '/MineInAbyss.io' : '',
+  assetPrefix: isProduction ? '/MineInAbyss.io/' : '',
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
