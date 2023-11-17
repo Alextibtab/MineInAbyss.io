@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { addBasePath } from "next/dist/client/add-base-path";
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-center items-center h-24'>
+    <nav className='flex justify-center items-center h-48'>
       <Link href='/wiki'>
         <span className='mr-5 cursor-pointer font-cursive'>Wiki</span>
       </Link>
@@ -14,11 +15,11 @@ const Navbar = () => {
 
       {/* Logo in the center */}
 
-      <div className='text-center relative h-24 w-48 cursor-pointer'>
+      <div className='text-center relative h-48 w-96 cursor-pointer'>
         <Link href='/'>
           <div className='relative w-full h-full'>
             <Image
-              src='/mia_logo.png'
+              src={addBasePath("/mia_logo.png")}
               alt='Logo'
               fill={true}
               className='object-fit'
